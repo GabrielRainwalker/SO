@@ -1,3 +1,6 @@
+/*
+ * Se extende da classe Thread para permitir uma execução multitarefa
+*/
 public class Produtor extends Thread {
     private final Buffer buffer;
     private final int maxItens = 15;
@@ -10,6 +13,7 @@ public class Produtor extends Thread {
 
     @Override
     public void run() {
+        // Produzindo itens e inserindo no buffer
         try {
             for (int i = 1; i <= maxItens; i++) {
                 int item = (int) (Math.random() * 100);

@@ -1,5 +1,5 @@
 public static void main(String[] args) {
-    System.out.println("=== PROBLEMA PRODUTOR-CONSUMIDOR ===");
+    System.out.println("=== OFERTA E PROCURA ===");
     System.out.println("Buffer com capacidade: 7 posições");
     System.out.println("Produtores: produzem até 15 itens cada");
     System.out.println("Consumidores: consomem até 12 itens cada");
@@ -18,6 +18,7 @@ public static void main(String[] args) {
     consumidor2.start();
     
     try {
+        // O JOIN faz com que a thread principal, Main, espere todas as outras finalizarem antes de continuar
         produtor1.join();
         produtor2.join();
         consumidor1.join();
@@ -26,9 +27,12 @@ public static void main(String[] args) {
         System.out.println("\n=====================================");
         System.out.println("Todas as threads finalizaram!");
         
-        buffer.fecharLog();
+        buffer.fecharLog(); // Fecha o arquivo de log
         
-        java.io.File arquivo = new java.io.File("log_buffer.txt");
+        /*
+         * Verifica se o arquivo de log foi criado
+        */
+        java.io.File arquivo = new java.io.File("log_buffer.txt"); 
         if (arquivo.exists()) {
             long tamanho = arquivo.length();
             System.out.println("Log salvo em: log_buffer.txt");

@@ -1,3 +1,7 @@
+/*
+ * Se extende da classe Thread para permitir uma execução multitarefa e representa um consumidor que retira os itens
+ * E se toma cuidados com para evitar condições de corrida na qual se produz mais do que se consome
+*/
 public class Consumidor extends Thread {
     private final Buffer buffer;
     private final int maxItens = 12;
@@ -10,6 +14,7 @@ public class Consumidor extends Thread {
 
     @Override
     public void run() {
+        // Consumindo itens do buffer
         try {
             for (int i = 1; i <= maxItens; i++) {
                 int item = buffer.consumir(nome);
