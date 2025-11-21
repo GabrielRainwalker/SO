@@ -1,3 +1,16 @@
+/*
+ *
+ *      TRABALHO DE SISTEMAS OPERACIONAIS - OFERTA E PROCURA
+ *  
+ *    Alunos: Gabriel Duarte Marques - 22303292
+ *            Elter Rodrigues        - 22309480        
+ *            João Vitor Jardim      - 22307063
+ * 
+ * 
+*/
+
+
+
 public static void main(String[] args) {
     System.out.println("=== OFERTA E PROCURA ===");
     System.out.println("Buffer com capacidade: 7 posições");
